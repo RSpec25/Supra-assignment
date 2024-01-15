@@ -76,6 +76,7 @@ contract Voting {
     }
 
     function getWinner() public view returns (string memory) {
+        require(votingEnd==true && votingStart==true);
         uint max = 1;
         uint draw;
         for (uint i = 2; i <= getCountCandidates(); ++i) {
